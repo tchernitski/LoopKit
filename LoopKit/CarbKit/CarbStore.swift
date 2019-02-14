@@ -178,7 +178,7 @@ public final class CarbStore: HealthKitSampleStore {
         carbRatioSchedule: CarbRatioSchedule? = nil,
         insulinSensitivitySchedule: InsulinSensitivitySchedule? = nil,
         syncVersion: Int = 1,
-        absorptionTimeOverrun: Double = 1.5,
+        absorptionTimeOverrun: Double = 1.2,
         calculationDelta: TimeInterval = 5 /* minutes */ * 60,
         effectDelay: TimeInterval = 10 /* minutes */ * 60
     ) {
