@@ -874,13 +874,20 @@ extension CarbStore {
             ]
 
             report.append(self.getCachedCarbEntries().map({
+                
+                
+                let sampleUUID = String(describing: $0.sampleUUID)
+                let syncIdentifier = $0.syncIdentifier ?? ""
+                let syncVersion = String(describing: $0.syncVersion)
+                let startDate = String(describing: $0.startDate)
+                let quantity = String(describing: $0.quantity)
                 return [
                     "\t",
-                    String(describing: $0.sampleUUID),
-                    $0.syncIdentifier ?? "",
-                    String(describing: $0.syncVersion),
-                    String(describing: $0.startDate),
-                    String(describing: $0.quantity),
+                    sampleUUID,
+                    syncIdentifier,
+                    syncVersion,
+                    startDate,
+                    quantity,
                     $0.foodType ?? "",
                     String(describing: $0.absorptionTime ?? self.defaultAbsorptionTimes.medium),
                     String(describing: $0.createdByCurrentApp),
@@ -888,6 +895,8 @@ extension CarbStore {
                     String(describing: $0.isUploaded),
                 ].joined(separator: ", ")
             }).joined(separator: "\n"))
+            
+            
             report.append("]")
             report.append("")
 
